@@ -1,1 +1,17 @@
+<h1>Your Basket</h1>
+<div id="cart"></div>
 
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let box = document.getElementById("cart");
+
+let total = 0;
+
+cart.forEach(c=>{
+  total += c.price;
+  box.innerHTML += `<p>${c.name} - KSh ${c.price}</p>`;
+});
+
+box.innerHTML += `<h2>Total: KSh ${total}</h2>`;
+</script>
