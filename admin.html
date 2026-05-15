@@ -1,1 +1,19 @@
+<h1>Admin Panel</h1>
 
+<div id="admin"></div>
+
+<script src="products.js"></script>
+
+<script>
+let box = document.getElementById("admin");
+
+products.forEach(p=>{
+  box.innerHTML += `
+    <div>
+      <h3>${p.name}</h3>
+      Stock: <input value="${p.stock}">
+      Price: <input value="${p.price}">
+    </div>
+  `;
+});
+</script>
