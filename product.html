@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div id="details"></div>
+
+<script src="products.js"></script>
+<script>
+const id = localStorage.getItem("selected");
+const product = products.find(p=>p.id==id);
+
+document.getElementById("details").innerHTML = `
+  <h1>${product.name}</h1>
+  <img src="${product.image}" width="300">
+  <p>${product.description}</p>
+  <p>KSh ${product.price}</p>
+`;
+</script>
+
+</body>
+</html>
